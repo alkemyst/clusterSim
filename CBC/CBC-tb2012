@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# MPV = 19100 
+# Noise = 950 
+# 6036, 16876 electrons thres
+# 7 um resolution telescope
+# 300 um thick
+# 80 um pitch
+# TB2012
+# crosstalk=8% (each side) = 16% (total)
+# <cluster width> = ?? 
+# res1 = ??
+# res2 = ??
+
+../bin/clustersim --maxangle=40 --chargedensity=63.7 --driftzone=20 --thickness=300 --saturation=1000 --adcbits=10 --pitch=80 --noiserms=950 --crosstalk=.16 --telescoperesolution=7 \
+   --angle=0  --threshold=5470  --tag=TB2012_530mV_0deg  binarySignal \
+   --angle=0  --threshold=16116 --tag=TB2012_610mV_0deg  binarySignal \
+   --angle=30 --threshold=5470  --tag=TB2012_530mV_30deg binarySignal \
+   --angle=0  --threshold=4139  --tag=TB2012_520mV_0deg  binarySignal \
+   --angle=0  --threshold=6800  --tag=TB2012_540mV_0deg  binarySignal \
+   --angle=0  --threshold=8131  --tag=TB2012_550mV_0deg  binarySignal \
+   --angle=0  --threshold=10793 --tag=TB2012_570mV_0deg  binarySignal \
+   --angle=0  --threshold=21439 --tag=TB2012_650mV_0deg  binarySignal \
+   --threshold=5470 --tag=TB2012_530mV_STD_TelescopeON   binErrorScan \
+   --tag=TB2012_530mV_STD_Intrinsic --telescoperesolution=0 binErrorScan \
+   --tag=TB2012_530mV_alternate_TelescopeON  --driftzone=40 --telescoperesolution=15 binErrorScan \
+   --tag=TB2012_530mV_alternate_Intrinsic --telescoperesolution=0 binErrorScan

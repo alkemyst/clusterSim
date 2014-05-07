@@ -1,0 +1,13 @@
+#!/bin/bash
+
+mvList="520 530 540 550 570 610 650"
+fileList=""
+
+reso=`cat antani | grep Residuals | grep _0deg`
+for i in $mvList; do
+    echo "$i" > /tmp/$i.txt
+    echo "$reso" | grep "${i}mV" | gawk '{print $8}' >> /tmp/$i.txt
+    fileList="$fileList /tmp/$i.txt"
+done
+
+paste $fileList

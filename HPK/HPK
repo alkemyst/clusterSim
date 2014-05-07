@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# MPV = 14700 
+# Noise = 500 
+# 2000 to 20000 electrons Thres
+# 6 um resolution telescope
+# 320 um thick
+# 80 um pitch
+# FZ 320 N
+# <cluster width> = 1.18
+# res1 = 25
+# res2 = 23
+../bin/clustersim --maxangle=40 --chargedensity=45.9375 --driftzone=20 --thickness=320 --saturation=10000 --adcbits=10 --pitch=80 --noiserms=500 --crosstalk=.08 --angle=0 --threshold=3000 --telescoperesolution=10 --tag=FZ320N binarySignal --tag=FZ320N binErrorScan
+
+
+# MPV = ?
+# Noise = ?
+# 2000 to 20000 electrons Thres
+# 6 um resolution telescope
+# 200 um thick
+# 80 um pitch

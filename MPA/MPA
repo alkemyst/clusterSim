@@ -1,0 +1,5 @@
+#!/bin/bash
+
+../bin/clustersim --maxangle=40 --chargedensity=70 --driftzone=20 --thickness=200 --saturation=30000 --adcbits=10 --pitch=100 --noiserms=220 --crosstalk=.12 --angle=0 --threshold=3744 --telescoperesolution=0 --tag=MPA binarySignal --tag=MPA_20um binErrorScan
+
+../bin/clustersim --maxangle=40 --chargedensity=70 --driftzone=99.99 --thickness=200 --saturation=30000 --adcbits=10 --pitch=100 --noiserms=220 --crosstalk=.12 --angle=0 --threshold=3744 --telescoperesolution=0 --tag=MPA_maxDrift binarySignal --tag=MPA_maxDrift binErrorScan

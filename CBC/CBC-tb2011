@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# MPV = 19100 
+# Noise = 950 
+# 6036, 16876 electrons thres
+# 7 um resolution telescope
+# 300 um thick
+# 80 um pitch
+# TB2012
+# crosstalk=8% (each side) = 16% (total)
+# <cluster width> = ?? 
+# res1 = ??
+# res2 = ??
+
+
+../bin/clustersim --maxangle=40 --chargedensity=63.7 --driftzone=60 --thickness=300 --saturation=1000 --adcbits=10 --pitch=134.4 --noiserms=950 --crosstalk=.16 --telescoperesolution=10 \
+  --angle=0  --threshold=5470  --tag=TB2011_530mV_0deg  binarySignal --tag=TB2011_530mV_0deg  binErrorScan
+
